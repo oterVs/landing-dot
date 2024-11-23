@@ -50,7 +50,7 @@ const HomePage = () => {
           <div className='flex flex-col w-1/2 justify-center '>
             <Marquee pauseOnHover className='-translate-y-20'>
               {ABOUT.hobbies.map((hobby) => (
-                <AboutComponent key={hobby.img} url={hobby.img} />
+                <AboutComponent key={hobby.img} {...hobby} />
               ))}
             </Marquee>
           </div>

@@ -1,6 +1,9 @@
 import { Icons } from "@/components/icons";
 import { HomeIcon } from "lucide-react";
-
+import { RiGameLine } from "react-icons/ri";
+import { IoBookOutline } from "react-icons/io5";
+import { LuCat } from "react-icons/lu";
+import { FaCode } from "react-icons/fa6";
 export const DATA = {
   name: "Dillion Verma",
   initials: "DV",
@@ -42,12 +45,34 @@ export const DATA = {
   },
 
 
-  
+
 } as const;
 
 
 export const ABOUT = {
   hobbies: [
-    { img: "/img/hobbie1.jpg", title: "Playing Guitar"},
+    {
+      img: "/img/hobbie1.jpg",
+      title: "Mascota",
+      description: "Los gatos son mis animales favoritos. Disfruto aprender sobre ellos y cuidar de mis propios felinos.",
+      icon: LuCat
+    },
+    {
+      img: "/img/hobbie2.jpg",
+      title: "Filosofía",
+      description: "La filosofía me apasiona. Me gusta reflexionar sobre la vida, la ética y el pensamiento humano en mi tiempo libre.",
+      icon: IoBookOutline
+    },
+    {
+      img: "/img/hobbie3.png",
+      title: "Juegos",
+      description: "Me gusta jugar videojuegos. Disfruto de los juegos de estrategia y de los juegos de rol.",
+      icon: RiGameLine
+    },
+    {
+      img: "/img/hobbie4.jpg", title: "Programación",
+      description: "Me encanta resolver problemas con código. Siempre estoy aprendiendo nuevas tecnologías y creando proyectos para mejorar mis habilidades."
+      , icon: FaCode
+    },
   ]
 }

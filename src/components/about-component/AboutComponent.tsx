@@ -1,24 +1,53 @@
+import clsx from 'clsx'
+import { Share2 } from 'lucide-react'
 import Image from 'next/image'
-import React from 'react'
+import React, { ReactNode } from 'react'
 
-const AboutComponent = ({ url }: { url: string }) => {
+const AboutComponent = ({ img, title, description, icon }: { img: string, title: string, description: string, icon: React.ComponentType<{ className?: string }> }) => {
   return (
     <div className=''>
-      <div className='group-card cursor-pointer  relative'>
+      <div className='group cursor-pointer  relative'>
         <Image
           className='rounded-lg'
-          src={url}
+          src={img}
           alt="About"
           width={750}
           height={700}
         />
-        <div className='absolute top-0 left-0 w-full h-full hidden group-card-hover:flex bg-white/40'>
-          <p>hola</p>
+        <div className='absolute top-0 left-0 flex-col justify-end p-5 w-full h-full hidden group-hover:flex  bg-gradient-to-b from-white/0 dark:from-black/0 to-slate-50 dark:to-black'>
+          <div className=' rounded-md p-3'>
+           <FeatureCard title={title} description={description} icon={icon} />
+          </div>
         </div>
       </div>
 
     </div>
   )
 }
+
+interface FeatureCardProps {
+  icon?: React.ComponentType<{ className?: string }>
+  title: string
+  description: string
+  className?: string
+  }
+
+function FeatureCard({
+  icon: Icon = Share2,
+  title,
+  description,
+  className,
+}: FeatureCardProps) {
+  return (
+    <div className={clsx("space-y-2", className)}>
+      <div className="h-10 w-10">
+        <Icon className="h-full w-full" />
+      </div>
+      <h3 className="text-xl font-semibold">{title}</h3>
+      <p className="text-muted-foreground">{description}</p>
+    </div>
+  )
+}
+
 
 export default AboutComponent
