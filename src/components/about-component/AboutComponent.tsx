@@ -1,11 +1,11 @@
 import clsx from 'clsx'
 import { Share2 } from 'lucide-react'
 import Image from 'next/image'
-import React, { ReactNode } from 'react'
+import React from 'react'
 
 const AboutComponent = ({ img, title, description, icon }: { img: string, title: string, description: string, icon: React.ComponentType<{ className?: string }> }) => {
   return (
-    <div className=''>
+
       <div className='group cursor-pointer  relative'>
         <Image
           className='rounded-lg'
@@ -15,13 +15,10 @@ const AboutComponent = ({ img, title, description, icon }: { img: string, title:
           height={700}
         />
         <div className='absolute top-0 left-0 flex-col justify-end p-5 w-full h-full hidden group-hover:flex  bg-gradient-to-b from-white/0 dark:from-black/0 to-slate-50 dark:to-black'>
-          <div className=' rounded-md p-3'>
            <FeatureCard title={title} description={description} icon={icon} />
-          </div>
+
         </div>
       </div>
-
-    </div>
   )
 }
 
