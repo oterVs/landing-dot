@@ -6,7 +6,7 @@ import React from 'react'
 const AboutComponent = ({ img, title, description, icon }: { img: string, title: string, description: string, icon: React.ComponentType<{ className?: string }> }) => {
   return (
 
-      <div className='group cursor-pointer  relative'>
+      <div className='group cursor-pointer  relative max-h-[422px]'>
         <Image
           className='rounded-lg'
           src={img}
@@ -16,7 +16,6 @@ const AboutComponent = ({ img, title, description, icon }: { img: string, title:
         />
         <div className='absolute top-0 left-0 flex-col justify-end p-5 w-full h-full hidden group-hover:flex  bg-gradient-to-b from-white/0 dark:from-black/0 to-slate-50 dark:to-black'>
            <FeatureCard title={title} description={description} icon={icon} />
-
         </div>
       </div>
   )
